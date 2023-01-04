@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  jenkins_agent_pyb:
+    image: jvalentino2/jenkins-agent-pyb
+    privileged: true
+    user: root
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    container_name: jenkins_agent_pyb
+    volumes:
+     - ./workspace:/home/jenkins/workspace
